@@ -1,4 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -25,4 +28,4 @@ function cd {
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 alias config='/usr/bin/git --git-dir=/home/cloud_user/.cfg/ --work-tree=/home/cloud_user'
-alias config='/usr/bin/git --git-dir=/home/cloud_user/.cfg/ --work-tree=/home/cloud_user'
+source /etc/profile.d/bash_completion.sh
