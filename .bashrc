@@ -33,3 +33,5 @@ source /usr/share/bash-completion/bash_completion
 alias kcd='kubectl config set-context $(kubectl config current-context) --namespace'
 source <(kubectl completion bash)
 
+alias k=kubectl
+complete -F __start_kubectl k
