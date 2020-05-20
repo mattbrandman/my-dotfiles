@@ -27,5 +27,9 @@ function cd {
     }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-alias config='/usr/bin/git --git-dir=/home/cloud_user/.cfg/ --work-tree=/home/cloud_user'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 source /etc/profile.d/bash_completion.sh
+source /usr/share/bash-completion/bash_completion
+alias kcd='kubectl config set-context $(kubectl config current-context) --namespace'
+source <(kubectl completion bash)
+
