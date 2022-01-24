@@ -1,0 +1,36 @@
+ export NVM_DIR=~/.nvm
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export IGNORE_PYTHON_VERSION_REQUIREMENT="1"  ##compass5ea843
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python2.7"  ##compass5ea843
+export GITROOT="/Users/matthew.brandman/development"  ##compass5ea843
+export PATH="$HOME/.jenv/bin:$PATH"
+alias cxx="~/development/cli/bazel-bin/cmd/compass/compass_/compass"
+alias d="cd ~/development && ls"
+alias dp="cd ~/development/personal && ls"
+cdl() { cd "$@" && ls; }
+eval "$(jenv init -)"
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthew.brandman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matthew.brandman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthew.brandman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matthew.brandman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+source <(kubectl completion zsh)
+
+eval $(thefuck --alias)
+setopt share_history
+autoload -U promptinit; promptinit
+prompt pure
