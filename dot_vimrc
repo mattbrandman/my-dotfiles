@@ -3,6 +3,7 @@
 :nnoremap <c-p> :GFiles<cr>
 :set nu rnu
 autocmd vimenter * ++nested colorscheme gruvbox
+autocmd BufWritePre *.py execute ':Black'
 runtime macros/matchit.vim
 set autoindent
 set expandtab
@@ -16,11 +17,12 @@ set ignorecase
 set smartcase
 set splitright
 set splitbelow
+set undodir=~/.vim/undo-dir/
 set undofile
-set undodir=/tmp/undo.$USER
 
 let g:go_highlight_trailing_whitespace_error=0
 let g:netrw_liststyle=3
+let g:black_virtualenv='~/.vim/black'
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=2
@@ -43,6 +45,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/vim-peekaboo'
+Plug 'psf/black', { 'branch': 'stable' }
 " Initialize plugin system
 call plug#end()
 
@@ -50,7 +53,6 @@ call plug#end()
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
-
 " TextEdit might fail if hidden is not set.
 set hidden
 

@@ -6,6 +6,7 @@ export GITROOT="/Users/matthew.brandman/development"  ##compass5ea843
 export PATH="$HOME/.jenv/bin:$PATH"
 alias cxx="~/development/cli/bazel-bin/cmd/compass/compass_/compass"
 alias d="cd ~/development && ls"
+alias sd="serverless deploy"
 alias dp="cd ~/development/personal && ls"
 cdl() { cd "$@" && ls; }
 eval "$(jenv init -)"
