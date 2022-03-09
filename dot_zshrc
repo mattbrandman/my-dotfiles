@@ -34,4 +34,11 @@ source <(kubectl completion zsh)
 eval $(thefuck --alias)
 setopt share_history
 autoload -U promptinit; promptinit
+
+function chpwd() {
+    emulate -L zsh
+    ls -a
+}
+
 prompt pure
+
