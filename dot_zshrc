@@ -5,6 +5,7 @@ alias cxx="~/development/cli/bazel-bin/cmd/compass/compass_/compass"
 alias d="cd ~/development && ls"
 alias sd="serverless deploy"
 alias dp="cd ~/development/personal && ls"
+alias ae="source env/bin/activate"
 cdl() { cd "$@" && ls; }
 eval "$(jenv init -)"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
